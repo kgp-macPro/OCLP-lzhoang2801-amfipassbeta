@@ -3,31 +3,41 @@
 <h1>OCLP 3.0.0 (lzhoang2801) – amfipassbeta Variant for macOS Tahoe</h1>
 </div>
 
-This repository provides a preserved and adapted version of the final **OCLP 3.0.0 Nightly snapshot (Dec 24, 2025)** by lzhoang2801, specifically configured to work with modern macOS Tahoe systems using the `-amfipassbeta` boot argument.
+---
+
+## ⚠️ Recommended Variant
+
+This repository provides the **recommended way** to run the preserved OCLP 3.0.0 Tahoe patchset using:
+
+**AMFIPass.kext + boot argument `-amfipassbeta`**
+
+Unlike the original setup, this variant **does not require `amfi=0x80`**, avoiding application compatibility issues.
 
 ---
 
 ## Overview
 
-The original snapshot is no longer directly usable on macOS Tahoe due to incomplete PatcherSupportPkg resources (notably missing AppleHDA).
+This repository provides a preserved and adapted version of the final **OCLP 3.0.0 Nightly snapshot (Dec 24, 2025)** by lzhoang2801, specifically configured for modern macOS Tahoe systems.
+
+The original snapshot is no longer directly usable on Tahoe due to incomplete PatcherSupportPkg resources (notably missing AppleHDA).
 
 This repository restores full functionality by redirecting the PatcherSupportPkg download to a preserved and fixed version that includes complete Universal-Binaries.
 
-No root patch logic has been modified.
+**No root patch logic has been modified.**
 
 ---
 
 ## Key Features
 
-- Based on original OCLP 3.0.0 (lzhoang2801 snapshot)
-- Fully compatible with `-amfipassbeta`
-- Restored **AppleHDA (modern audio)** support
+- Based on original **OCLP 3.0.0 (lzhoang2801 snapshot)**
+- Fully compatible with **AMFIPass.kext + `-amfipassbeta`**
+- Restored **AppleHDA (modern audio)**
 - Fully working **modern Wi-Fi stack**
 - Complete **AWDL functionality**:
   - AirDrop (bidirectional)
   - AirPlay
   - Screen Mirroring
-  - Handoff / Continuity
+  - Handoff / Continuity *(note: device-dependent limitations may apply)*
 - No dependency on `amfi=0x80`
 
 ---
@@ -35,6 +45,7 @@ No root patch logic has been modified.
 ## Requirements
 
 - Boot argument:
+
 
 -amfipassbeta
 
@@ -65,7 +76,7 @@ Working components:
 - Wi-Fi
 - AirDrop (bidirectional)
 - AirPlay / Screen Mirroring
-- Handoff / Continuity
+- Handoff / Continuity *(reverse direction may be limited depending on device)*
 
 ---
 
@@ -85,7 +96,7 @@ This repository serves as a **stable reference environment** for:
 - macOS Tahoe 26.x
 - modern Wi-Fi (AWDL)
 - modern audio (AppleHDA)
-- amfipassbeta-based patching workflows
+- **amfipassbeta-based patching workflows**
 
 ---
 
@@ -94,11 +105,10 @@ This repository serves as a **stable reference environment** for:
 Further discussion and setup details:
 
 **InsanelyMac:**  
-https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nightly-%E2%80%93-wi-fi-airdropairplay-and-applehda-fully-working-under-tahoe/
+https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nightly-%E2%80%93-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe/
 
-**tonymacx86:**  
-https://www.tonymacx86.com/threads/experimental-fork-of-oclp-3-0-0-nightly-wi-fi-airdrop-airplay-and-applehda-fully-working-under-tahoe.332849/
-
+**tonymacx86 (mirror thread):**  
+https://www.tonymacx86.com/threads/experimental-fork-of-oclp-3-0-0-nightly-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe-26-x.332849/
 ---
 
 ## Credits
