@@ -129,7 +129,7 @@ This repository only preserves and restores functionality:
 Maintained by **kgp**
 
 - GitHub: https://github.com/kgp-macPro  
-- InsanelyMac: kgp-iMacPro  
+- InsanelyMac: kgp (formerly KGP-iMacPro)
 - tonymacx86: kgp  
 
 ---
