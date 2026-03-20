@@ -5,7 +5,7 @@
 
 ---
 
-## ⚠️ Recommended Variant
+## Recommended Setup
 
 This repository provides the **recommended way** to run the preserved OCLP 3.0.0 Tahoe patchset using:
 
@@ -37,7 +37,9 @@ This repository restores full functionality by redirecting the PatcherSupportPkg
   - AirDrop (bidirectional)
   - AirPlay
   - Screen Mirroring
-  - Handoff / Continuity *(note: device-dependent limitations may apply)*
+- Partial **Continuity support**:
+  - Handoff (e.g. Mail, Notes, Safari)
+  - Sidecar (currently not functional)
 - No dependency on `amfi=0x80`
 
 ---
@@ -45,10 +47,7 @@ This repository restores full functionality by redirecting the PatcherSupportPkg
 ## Requirements
 
 - Boot argument:
-
-
--amfipassbeta
-
+`-amfipassbeta`
 
 - Compatible system capable of running Tahoe root patches
 
@@ -68,15 +67,17 @@ It provides the required Universal-Binaries including AppleHDA for Tahoe.
 
 Fully verified on:
 
-- macOS 26.4 beta 4
+- macOS 26.4 beta 4 and macOS 26.4 RC
 
 Working components:
 
 - AppleHDA (audio)
 - Wi-Fi
 - AirDrop (bidirectional)
-- AirPlay / Screen Mirroring
-- Handoff / Continuity *(reverse direction may be limited depending on device)*
+- AirPlay
+- Screen Mirroring
+- Handoff (e.g. Mail, Notes, Safari)
+- Sidecar (currently not functional)
 
 ---
 
