@@ -13,115 +13,99 @@ This repository provides the **recommended way** to run the preserved OCLP 3.0.0
 
 Unlike the original setup, this variant **does not require `amfi=0x80`**, avoiding application compatibility issues.
 
+For full documentation, compatibility details and updates, see:
+
+**InsanelyMac thread (primary reference):**  
+https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nightly-%E2%80%93-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe/
+
 ---
 
 ## Overview
 
-This repository provides a preserved and adapted version of the final **OCLP 3.0.0 Nightly snapshot (Dec 24, 2025)** by lzhoang2801, specifically configured for modern macOS Tahoe systems.
+This repository provides a preserved and adapted version of the final **OCLP 3.0.0 Nightly snapshot (Dec 24, 2025)** by lzhoang2801, configured for macOS Tahoe 26.x.
 
-The original snapshot is no longer directly usable on Tahoe due to incomplete PatcherSupportPkg resources (notably missing AppleHDA).
+The original snapshot is no longer directly usable on Tahoe due to incomplete PatcherSupportPkg resources (missing AppleHDA).
 
-This repository restores full functionality by redirecting the PatcherSupportPkg download to a preserved and fixed version that includes complete Universal-Binaries.
+This repository restores full functionality by redirecting the PatcherSupportPkg download to a preserved version including complete Universal-Binaries.
 
 **No root patch logic has been modified.**
 
 ---
 
-## Key Features
+## Functionality
 
-- Based on original **OCLP 3.0.0 (lzhoang2801 snapshot)**
-- Fully compatible with **AMFIPass.kext + `-amfipassbeta`**
-- Restored **AppleHDA (modern audio)**
-- Fully working **modern Wi-Fi stack**
-- Complete **AWDL functionality**:
-  - AirDrop (bidirectional)
-  - AirPlay
-  - Screen Mirroring
-- Partial **Continuity support**:
-  - Handoff (e.g. Mail, Notes, Safari)
-  - Sidecar (currently not functional)
-- No dependency on `amfi=0x80`
+The following components are confirmed working with this setup:
+
+- modern audio (AppleHDA)  
+- modern Wi-Fi (Broadcom and supported Intel chipsets)  
+
+AWDL stack:
+- AirDrop (bidirectional)  
+- AirPlay  
+- Screen Mirroring  
+
+Continuity:
+- Handoff (e.g. Mail, Notes, Safari)  
+- Sidecar (currently not functional)  
 
 ---
 
 ## Requirements
 
-- Boot argument:
-`-amfipassbeta`
+- Boot argument:  
+  `-amfipassbeta`
 
-- Compatible system capable of running Tahoe root patches
+- A suitable **Kernel Debug Kit (KDK)** is required for OCLP root patching  
+
+For compatibility details (macOS versions and KDK handling), see the thread.
 
 ---
 
 ## PatcherSupportPkg Dependency
 
-This repository relies on the following preserved PatcherSupportPkg:
+This repository relies on:
 
 https://github.com/kgp-macPro/PatcherSupportPkg-laobamac
 
-It provides the required Universal-Binaries including AppleHDA for Tahoe.
+Provides required Universal-Binaries including AppleHDA for Tahoe.
 
 ---
 
-## Tested Configuration
+## Repository Scope
 
-Fully verified on:
+This repository:
 
-- macOS 26.4 beta 4 and macOS 26.4 RC
-
-Working components:
-
-- AppleHDA (audio)
-- Wi-Fi
-- AirDrop (bidirectional)
-- AirPlay
-- Screen Mirroring
-- Handoff (e.g. Mail, Notes, Safari)
-- Sidecar (currently not functional)
+- does **not introduce new patch logic**  
+- restores a reproducible working state of the original snapshot  
+- redirects PatcherSupportPkg to a preserved version including AppleHDA  
 
 ---
 
 ## Important Notes
 
-- This is **not an official Dortania OCLP release**
-- This is a **preserved and adapted reference implementation**
-- Only the PatcherSupportPkg source has been changed
-- No additional patch logic has been introduced
-
----
-
-## Purpose
-
-This repository serves as a **stable reference environment** for:
-
-- macOS Tahoe 26.x
-- modern Wi-Fi (AWDL)
-- modern audio (AppleHDA)
-- **amfipassbeta-based patching workflows**
+- this fork is **not supported by the OCLP developers**  
+- intended for **advanced Hackintosh configurations only**  
+- no patches other than modern audio (AppleHDA) and modern Wi-Fi + AWDL are expected to work  
+- always keep a bootable backup before applying root patches  
 
 ---
 
 ## Community & Discussion
 
-Further discussion and setup details:
-
-**InsanelyMac:**  
-[Experimental fork of OCLP 3.0.0 Nightly – modern Wi-Fi, AWDL and AppleHDA fully working under Tahoe](https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nightly-%E2%80%93-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe/)
+Additional discussion:
 
 **tonymacx86 (mirror thread):**  
-[Experimental fork of OCLP 3.0.0 Nightly – modern Wi-Fi, AWDL and AppleHDA fully working under Tahoe 26.x](https://www.tonymacx86.com/threads/experimental-fork-of-oclp-3-0-0-nightly-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe-26-x.332849/)
+https://www.tonymacx86.com/threads/experimental-fork-of-oclp-3-0-0-nightly-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe-26-x.332849/
 
 ---
 
 ## Credits
 
-All credits go to the original OCLP developers and contributors.
-
-This repository only preserves and restores functionality:
-
 - Dortania OCLP Team  
 - lzhoang2801  
-- All PatcherSupportPkg contributors  
+- laobamac_yyds  
+- InsanelyMac community  
+- tonymacx86 community (mirror thread)
 
 ---
 
@@ -130,7 +114,7 @@ This repository only preserves and restores functionality:
 Maintained by **kgp**
 
 - GitHub: https://github.com/kgp-macPro  
-- InsanelyMac: kgp (formerly KGP-iMacPro)
+- InsanelyMac: kgp (formerly KGP-iMacPro)  
 - tonymacx86: kgp  
 
 ---
