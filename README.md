@@ -1,6 +1,6 @@
 <div align="center">
 <img src="docs/images/OC-Patcher.png" alt="OpenCore Patcher Logo" width="256" />
-<h1>OCLP 3.0.0 (lzhoang2801) – amfipassbeta Variant for macOS Tahoe</h1>
+<h1>OCLP 3.0.0 Nightly – amfipassbeta Variant for macOS Tahoe (based on lzhoang2801)</h1>
 </div>
 
 ---
