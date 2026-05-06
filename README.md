@@ -1,6 +1,6 @@
 <div align="center">
 <img src="docs/images/OC-Patcher.png" alt="OpenCore Patcher Logo" width="256" />
-<h1>OCLP 3.0.0 Nightly – amfipassbeta Variant for macOS Tahoe</h1>
+<h1>OCLP 3.0.0 Nightly – amfipassbeta Edition for macOS Tahoe</h1>
 </div>
 
 ---
@@ -26,15 +26,29 @@ This repository provides a reproducible and adapted version of the final OCLP 3.
 
 The original snapshot is no longer directly usable on Tahoe due to incomplete PatcherSupportPkg resources.
 
-This repository restores full functionality by using a compatible PatcherSupportPkg providing complete Universal-Binaries and enabling compatibility with AMFIPass.kext and -amfipassbeta.
+This repository restores the functionality required for modern AppleHDA, Wi-Fi and AWDL support by using a compatible PatcherSupportPkg providing complete Universal-Binaries and enabling compatibility with AMFIPass.kext and `-amfipassbeta`.
 
-No root patch logic has been modified.
+No original Tahoe root patch logic has been modified.
+
+---
+
+## Scope Clarification
+
+This repository is intended exclusively for advanced Hackintosh systems running macOS Tahoe 26.x.
+
+It is NOT a general unsupported-Mac patching project.
+
+No additional graphics acceleration patches or unsupported-Mac root patch frameworks are included.
+
+This repository intentionally remains as close as possible to the original OCLP 3.0.0 Nightly Tahoe baseline released by the OCLP developers and later preserved by lzhoang2801.
+
+The fork only enables and preserves the original Tahoe patch functionality already implemented by the OCLP developers.
 
 ---
 
 ## Functionality
 
-The following components are confirmed working with this setup:
+The following components are currently confirmed working with this setup:
 
 - modern audio (AppleHDA)
 - modern Wi-Fi (Broadcom and supported Intel chipsets)
@@ -67,7 +81,7 @@ This repository relies on:
 
 https://github.com/kgp-macPro/PatcherSupportPkg-laobamac
 
-This PatcherSupportPkg provides complete Universal-Binaries and enables compatibility with AMFIPass.kext and -amfipassbeta.
+This PatcherSupportPkg provides complete Universal-Binaries and enables compatibility with AMFIPass.kext and `-amfipassbeta`.
 
 ---
 
@@ -76,17 +90,19 @@ This PatcherSupportPkg provides complete Universal-Binaries and enables compatib
 This repository:
 
 - provides a reproducible working reference of the original OCLP 3.0.0 Nightly snapshot
-- restores missing resources required for full functionality
-- uses a PatcherSupportPkg compatible with AMFIPass.kext and -amfipassbeta, including AppleHDA
+- restores missing resources required for modern AppleHDA, Wi-Fi and AWDL functionality
+- uses a PatcherSupportPkg compatible with AMFIPass.kext and `-amfipassbeta`, including AppleHDA
 - does **not introduce any new patch logic**
 
 ---
 
 ## Important Notes
 
+- this fork only enables and preserves the original Tahoe patch functionality already implemented by the OCLP developers
 - this fork is **not supported by the OCLP developers**
 - intended for **advanced Hackintosh configurations only**
 - only modern audio (AppleHDA) and modern Wi-Fi + AWDL are expected to work reliably
+- no additional graphics acceleration or unsupported-Mac root patch frameworks are included
 - always keep a bootable backup before applying root patches
 
 ---
@@ -102,9 +118,10 @@ https://www.tonymacx86.com/threads/experimental-fork-of-oclp-3-0-0-nightly-moder
 
 ## Credits
 
-- Dortania OCLP Team
-- lzhoang2801
-- laobamac_yyds
+- Dortania OCLP Team (development)
+- lzhoang2801 (original Tahoe fork)
+- kgp (preservation, maintenance, AMFIPass integration, AppleHDA restoration, testing and documentation)
+- laobamac_yyds (amfipassbeta PatcherSupportPkg)
 - InsanelyMac community
 - tonymacx86 community (mirror thread)
 
@@ -122,8 +139,8 @@ Maintained by **kgp**
 
 ## Disclaimer
 
-This is an experimental patcher variant intended for advanced Hackintosh environments.
+This repository provides a preserved and maintained Tahoe patch environment intended for advanced Hackintosh systems.
 
-Not intended for unsupported Macs.
+Not intended for unsupported Macs requiring graphics acceleration root patches.
 
 Use at your own risk.
