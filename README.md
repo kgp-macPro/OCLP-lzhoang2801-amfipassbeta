@@ -144,3 +144,10 @@ This repository provides a preserved and maintained Tahoe patch environment inte
 Not intended for unsupported Macs requiring graphics acceleration root patches.
 
 Use at your own risk.
+
+---
+
+If this repository was useful to you:
+
+A coffee is always appreciated ☕  
+https://buymeacoffee.com/kgp.macpro
