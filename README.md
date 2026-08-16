@@ -5,7 +5,7 @@
 
 ---
 
-## Recommended Setup
+## Established Conservative Setup
 
 This repository provides the **established, extensively tested conservative AMFIPass-based edition** of the preserved OCLP 3.0.0 Tahoe patch environment using:
 
@@ -20,11 +20,21 @@ https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nig
 
 ---
 
+## Recommended Current Setup
+
+For new installations and users who want the current further-developed patcher architecture, the recommended setup is:
+
+**[OCLP-CustoMac 3.0.0](https://github.com/kgp-macPro/OCLP-CustoMac/releases/tag/v3.0.0)**
+
+OCLP-CustoMac adds direct Intel detection, selectable Modern Wi-Fi and Modern Audio, AUTO and Manual KDK handling, improved Root Patch recovery and APFS resource handling.
+
+---
+
 ## Three Available Tahoe Editions
 
 ### 1. OCLP 3.0.0 Nightly – Preserved Reference Edition
 
-The Preserved Reference Edition is the most conservative environment and remains closest to the earlier working OCLP 3.0.0 Nightly Tahoe architecture.
+The Preserved Reference Edition is the most conservative preserved reference and remains closest to the earlier working OCLP 3.0.0 Nightly Tahoe architecture.
 
 [OCLP 3.0.0 Nightly – Preserved Reference Edition](https://github.com/kgp-macPro/OCLP-lzhoang2801)
 
@@ -36,7 +46,7 @@ This repository is the established, extensively runtime-tested conservative AMFI
 
 ### 3. OCLP-CustoMac
 
-OCLP-CustoMac is a separate further-developed branch with its own patcher-control architecture.
+OCLP-CustoMac is the recommended current setup for new installations and users who want the further-developed patcher architecture.
 
 - [OCLP-CustoMac repository](https://github.com/kgp-macPro/OCLP-CustoMac)
 - [OCLP-CustoMac 3.0.0 release](https://github.com/kgp-macPro/OCLP-CustoMac/releases/tag/v3.0.0)
