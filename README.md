@@ -7,7 +7,7 @@
 
 ## Recommended Setup
 
-This repository provides the **recommended way** to run the preserved OCLP 3.0.0 Tahoe patchset using:
+This repository provides the **established, extensively tested conservative AMFIPass-based edition** of the preserved OCLP 3.0.0 Tahoe patch environment using:
 
 **AMFIPass.kext + boot argument `-amfipassbeta`**
 
@@ -17,6 +17,31 @@ For full documentation, compatibility details, proper setup and EFI configuratio
 
 **InsanelyMac thread (primary reference):**  
 https://www.insanelymac.com/forum/topic/362042-experimental-fork-of-oclp-300-nightly-%E2%80%93-modern-wi-fi-awdl-and-applehda-fully-working-under-tahoe/
+
+---
+
+## Three Available Tahoe Editions
+
+### 1. OCLP 3.0.0 Nightly – Preserved Reference Edition
+
+The Preserved Reference Edition is the most conservative environment and remains closest to the earlier working OCLP 3.0.0 Nightly Tahoe architecture.
+
+[OCLP 3.0.0 Nightly – Preserved Reference Edition](https://github.com/kgp-macPro/OCLP-lzhoang2801)
+
+### 2. OCLP 3.0.0 Nightly – amfipassbeta Edition
+
+This repository is the established, extensively runtime-tested conservative AMFIPass-based edition.
+
+[OCLP 3.0.0 Nightly – amfipassbeta Edition](https://github.com/kgp-macPro/OCLP-lzhoang2801-amfipassbeta)
+
+### 3. OCLP-CustoMac
+
+OCLP-CustoMac is a separate further-developed branch with its own patcher-control architecture.
+
+- [OCLP-CustoMac repository](https://github.com/kgp-macPro/OCLP-CustoMac)
+- [OCLP-CustoMac 3.0.0 release](https://github.com/kgp-macPro/OCLP-CustoMac/releases/tag/v3.0.0)
+
+OCLP-CustoMac does not make the amfipassbeta Edition obsolete. Existing users whose setup works as desired do not need to migrate, and migration to OCLP-CustoMac is optional.
 
 ---
 
@@ -48,22 +73,32 @@ The fork only enables and preserves the original Tahoe patch functionality alrea
 
 ## Functionality
 
-The following components are currently confirmed working with this setup:
+### Modern Audio / AppleHDA
 
 - modern audio (AppleHDA)
-- modern Wi-Fi (Broadcom and supported Intel chipsets)
 
-AWDL stack:
+### Broadcom Modern Wireless
+
+The validated Broadcom path includes:
+
+- Wi-Fi
 - AirDrop (bidirectional)
 - AirPlay (bidirectional)
 - Screen Mirroring (bidirectional)
 - Personal Hotspot
 - Continuity Camera
-
-Continuity:
 - Handoff (e.g. Mail, Notes, Safari)
 
-Sidecar:
+### Intel Wi-Fi
+
+Intel Wi-Fi operation depends on external AirportItlwm. This amfipassbeta Edition retains the historically documented Broadcom `IOName` spoof used for Intel detection; existing users should not remove that spoof merely because OCLP-CustoMac uses a different detector, and it is not obsolete for this edition.
+
+OCLP-CustoMac differs by detecting Intel hardware directly from its authentic PCI identity and therefore does not require Broadcom `IOName` spoofing for OCLP-CustoMac itself.
+
+Current AirportItlwm does not provide the complete native AWDL control/data path required for reliable bidirectional AirDrop, Personal Hotspot or Continuity Camera. Intel therefore does not inherit the complete Broadcom AWDL/Continuity claim above.
+
+### Sidecar
+
 - currently not functional
 
 ---
@@ -86,6 +121,8 @@ This repository relies on:
 https://github.com/kgp-macPro/PatcherSupportPkg-laobamac
 
 This PatcherSupportPkg provides complete Universal-Binaries and enables compatibility with AMFIPass.kext and `-amfipassbeta`.
+
+OCLP-CustoMac retains the same KGP-maintained signed PatcherSupportPkg payload lineage used by the amfipassbeta Edition while implementing its own separate patcher-control architecture.
 
 ### Verified Payload Relationship
 
@@ -133,7 +170,7 @@ This repository:
 - this fork only enables and preserves the original Tahoe patch functionality already implemented by the OCLP developers
 - this fork is **not supported by the OCLP developers**
 - intended for **advanced Hackintosh configurations only**
-- only modern audio (AppleHDA) and modern Wi-Fi + AWDL are expected to work reliably
+- modern audio (AppleHDA) and the validated Broadcom Modern Wireless AWDL/Continuity path are expected to work reliably; Intel remains subject to external AirportItlwm limitations
 - no additional graphics acceleration or unsupported-Mac root patch frameworks are included
 - always keep a bootable backup before applying root patches
 
